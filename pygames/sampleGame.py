@@ -19,6 +19,27 @@ clock = pygame.time.Clock()
 
 carImg = pygame.image.load('pygameimg.png')
 
+def game_intro():
+
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        gameDisplay.fill(white)
+        largeText = pygame.font.Font('freesansbold.ttf',115)
+        TextSurf, TextRect = text_objects("A bit racey", largeText)
+        TextRect.center = ((display_width/2),(display_height/2))
+        gameDisplay.blit(TextSurf, TextRect)
+        pygame.display.update()
+        clock.tick(15)
+
+
+
+    
 def things(thingx, thingy, thingw,thingh,color):
     pygame.draw.rect(gameDisplay,color, [thingx, thingy, thingw,thingh])
 
@@ -104,6 +125,7 @@ def game_loop():
         pygame.display.update()
         clock.tick(60)
 
+game_intro()
 game_loop()
 pygame.quit()
 quit()
