@@ -66,7 +66,7 @@ class window(Frame):
         
             
     def showImg(self):
-        load = Image.open("python_logo.png")
+        load = Image.open("py001.jpg")
         render = ImageTk.PhotoImage(load)
 
         # labels can be text or images
