@@ -16,7 +16,7 @@ block_color = (53,115,255)
 car_width = 73
 
 gameDisplay = pygame.display.set_mode((display_width,display_height))
-pygame.display.set_caption('A bit Racey')
+pygame.display.set_caption('Be a Racer')
 clock = pygame.time.Clock()
 
 carImg = pygame.image.load('pygameimg.png')
@@ -24,7 +24,7 @@ carImg = pygame.image.load('pygameimg.png')
 
 def things_dodged(count):
     font = pygame.font.SysFont(None, 25)
-    text = font.render("Dodged: "+str(count), True, black)
+    text = font.render("Score: "+str(count), True, black)
     gameDisplay.blit(text,(0,0))
 
 def things(thingx, thingy, thingw, thingh, color):
@@ -112,14 +112,14 @@ def game_loop():
             thing_width += (dodged * 1.2)
 
         if y < thing_starty+thing_height:
-            print('y crossover')
+            print('y')
 
             if x > thing_startx and x < thing_startx + thing_width or x+car_width > thing_startx and x + car_width < thing_startx+thing_width:
-                print('x crossover')
+                print('x')
                 crash()
         
         pygame.display.update()
-        clock.tick(60)
+        clock.tick(70)
 
 game_loop()
 pygame.quit()
