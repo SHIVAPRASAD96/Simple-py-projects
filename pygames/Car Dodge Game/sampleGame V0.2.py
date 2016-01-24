@@ -19,7 +19,7 @@ gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('Be a Racer')
 clock = pygame.time.Clock()
 
-carImg = pygame.image.load('pygameimg.png')
+carImg = pygame.image.load('images/pygameimg.png')
 
 
 def things_dodged(count):
